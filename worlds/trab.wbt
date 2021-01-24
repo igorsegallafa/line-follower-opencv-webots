@@ -1,0 +1,145 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.9237820479560231 0.28013644490625866 0.26105612444349724 4.718218210013066
+  position -0.009503953700174678 2.080265750074956 0.07332483045286933
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorTileSize 1 1
+  floorAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/floor.png"
+      ]
+    }
+    roughnessMap ImageTexture {
+      url [
+        ""
+      ]
+    }
+    metalness 0
+    normalMap ImageTexture {
+      url [
+        ""
+      ]
+    }
+    occlusionMap ImageTexture {
+      url [
+        ""
+      ]
+    }
+  }
+}
+DEF OBSTACLE1 Solid {
+  translation 0.00874789 0.025 0.0222063
+  rotation 0 1 0 0.261799
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0.0470588 0.952941
+        metalness 0
+        emissiveColor 1 0 0
+        emissiveIntensity 0
+      }
+      geometry DEF BOX1 Box {
+        size 0.05 0.05 0.05
+      }
+      castShadows FALSE
+    }
+  ]
+  name "red box(3)"
+  boundingObject USE BOX1
+}
+DEF OBSTACLE1 Solid {
+  translation -0.161112 0.015 0.0657548
+  rotation 0 1 0 -1.5707953071795862
+  scale 0.5 0.5 0.5
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.705882 0.12549 0.137255
+        metalness 0
+        emissiveColor 0.705882 0.12549 0.137255
+      }
+      geometry DEF BOX1 Box {
+        size 0.05 0.05 0.05
+      }
+      castShadows FALSE
+    }
+  ]
+  name "red box(1)"
+  boundingObject USE BOX1
+}
+DEF OBSTACLE1 Solid {
+  translation 0.109378 0.015 -0.202078
+  rotation 0 1 0 -1.5707953071795862
+  scale 0.5 0.5 0.5
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.309804 0.705882 0.12549
+        metalness 0
+        emissiveColor 0.309804 0.705882 0.12549
+      }
+      geometry DEF BOX1 Box {
+        size 0.05 0.05 0.05
+      }
+      castShadows FALSE
+    }
+  ]
+  name "red box(2)"
+  boundingObject USE BOX1
+}
+DEF OBSTACLE2 Solid {
+  translation -0.117126 0.025 -0.223257
+  rotation 0 -1 0 2.98475
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0.333333 1
+        roughness 0.5
+        metalness 0
+      }
+      geometry DEF BOX2 Box {
+        size 0.08 0.05 0.08
+      }
+    }
+  ]
+  name "pink box"
+  boundingObject USE BOX2
+}
+DEF OBSTACLE3 Solid {
+  translation 0.199737 0.025 0.284017
+  rotation 0 1 0 13.7261
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.501961 0.501961 0.501961
+        roughness 0.5
+        metalness 0
+      }
+      geometry DEF BOX3 Box {
+        size 0.2 0.05 0.05
+      }
+    }
+  ]
+  name "gray box"
+  boundingObject USE BOX3
+}
+E-puck {
+  translation 0.123718 -4.55191e-15 0.275728
+  rotation 0 1 0 1.5708
+  controller "robot_controller"
+  camera_width 364
+  camera_height 224
+  groundSensorsSlot [
+    E-puckGroundSensors {
+    }
+  ]
+}
